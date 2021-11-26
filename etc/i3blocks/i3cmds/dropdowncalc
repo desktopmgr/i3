@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ifinstalled calc && echo "Welcome to the Calculator." && calc --term
