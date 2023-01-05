@@ -108,7 +108,7 @@ install_cpan "$CPAN"
 install_gem "$GEMS"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Other dependencies
-dotfilesreq
+dotfilesreq sxhkd
 dotfilesreqadmin
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Ensure directories exist
@@ -147,8 +147,8 @@ fi
 # run post install scripts
 run_postinst() {
   desktopmgr_run_post
-  rm -Rf "/usr/share/xsessions/i3-debug.desktop"
   ln_sf "$APPDIR/i3blocks" "$CONF/i3blocks"
+  rm -Rf "/usr/share/xsessions/i3-with-shmlog.desktop" || true
 }
 #
 execute "run_postinst" "Running post install scripts"
