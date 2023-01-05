@@ -147,6 +147,7 @@ fi
 # run post install scripts
 run_postinst() {
   desktopmgr_run_post
+  rm -Rf "/usr/share/xsessions/i3-debug.desktop"
   ln_sf "$APPDIR/i3blocks" "$CONF/i3blocks"
 }
 #
